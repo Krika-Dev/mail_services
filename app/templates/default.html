@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ titulo | default("Restablecimiento de contraseña") }}</title>
+</head>
+<body style="margin:0; padding:0; background-color:#f4f4f4; font-family: Arial, Helvetica, sans-serif;">
+
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4; padding:20px 0;">
+    <tr>
+        <td align="center">
+
+            <!-- CONTENEDOR -->
+            <table width="600" cellpadding="0" cellspacing="0" style="background-color:#ffffff; border-radius:12px; overflow:hidden;">
+
+                <!-- HEADER -->
+                <tr>
+                    <td align="center" style="padding:20px;">
+                        <img src="{{ logo_url }}"
+                             alt="KRIKA"
+                             width="120"
+                             style="display:block;">
+                    </td>
+                </tr>
+
+                <!-- ICONO -->
+                <!-- <tr>
+                    <td align="center" style="padding:10px;">
+                        <img src="{{ icon_url }}"
+                             alt="Seguridad"
+                             width="80"
+                             style="display:block;">
+                    </td>
+                </tr> -->
+
+                <!-- TITULO -->
+                <tr>
+                    <td align="center" style="background-color:#e91c7a; padding:15px;">
+                        <span style="font-size:20px; font-weight:bold; color:#FFF;">
+                            {{ encabezado }}
+                        </span>
+                    </td>
+                </tr>
+
+                <!-- CONTENIDO -->
+                <tr>
+                    <td style="padding:30px; color:#333; font-size:15px; line-height:1.6;">
+                        <p>Buen día, <strong>{{ nombre_usuario }}</strong></p>
+
+                        <p>
+                            Para continuar con el proceso de recuperación de contraseña,
+                            ingrese las siguientes credenciales:
+                        </p>
+
+                        <!-- CREDENCIALES -->
+                        <table align="center" cellpadding="0" cellspacing="0" style="margin:25px auto;">
+                            <tr>
+                                <td style="background-color:#e91c7a; padding:15px 30px; border-radius:18px; font-size:16px; font-weight:bold; color:#fff; text-align:center;">
+                                    usuario: {{ usuario }} <br>
+                                    clave: {{ clave_temporal }}
+                                </td>
+                            </tr>
+                        </table>
+
+                        <!-- IMPORTANTE -->
+                        <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#e0e0e0; border-radius:10px; margin:20px 0;">
+                            <tr>
+                                <td style="padding:15px;">
+                                    <strong>¡Importante!</strong><br>
+                                    Es importante que actualices tu <strong>contraseña</strong>
+                                    al ingresar al sistema.
+                                </td>
+                            </tr>
+                        </table>
+
+                        <p>
+                            Para acceder a la plataforma Mesa de ayuda, haga clic
+                            <a href="{{ url_plataforma }}"
+                               style="color:#e91c7a; font-weight:bold; text-decoration:none;">
+                                aquí
+                            </a>.
+                        </p>
+                    </td>
+                </tr>
+
+                <!-- FOOTER -->
+                <tr>
+                    <td align="center" style="padding:15px; font-size:12px; color:#555;">
+                        Este mensaje de correo se le ha enviado de forma automática.<br>
+                        Por favor, no responda a este mensaje.
+                    </td>
+                </tr>
+
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>
