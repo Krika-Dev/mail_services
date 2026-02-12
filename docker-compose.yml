@@ -5,7 +5,18 @@ services:
     build: .
     container_name: mailer_service
     restart: unless-stopped
+
     ports:
       - "8010:8000"
+
     env_file:
       - .env
+
+    deploy:
+      resources:
+        limits:
+          cpus: "0.25"
+          memory: 256M
+        reservations:
+          cpus: "0.10"
+          memory: 128M
