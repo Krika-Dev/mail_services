@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>{{ titulo | default("Confirmación de radicado PQR") }}</title>
@@ -7,119 +8,124 @@
 
 <body style="margin:0; padding:0; background-color:#f4f4f4; font-family: Arial, Helvetica, sans-serif;">
 
-<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4; padding:20px 0;">
-<tr>
-<td align="center">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#f4f4f4; padding:20px 0;">
+        <tr>
+            <td align="center">
 
-<!-- CONTENEDOR -->
-<table width="600" cellpadding="0" cellspacing="0"
-       style="background-color:#ffffff; border-radius:12px; overflow:hidden;">
+                <!-- CONTENEDOR -->
+                <table width="600" cellpadding="0" cellspacing="0"
+                    style="background-color:#fff; border-radius:12px; overflow:hidden;">
 
-    <!-- HEADER LOGO -->
-    <tr>
-        <td align="center" style="padding:20px;">
-            <img src="{{ logo_url }}"
-                 alt="KRIKA"
-                 width="120"
-                 style="display:block;">
-        </td>
-    </tr>
 
-    <!-- BARRA SUPERIOR -->
-    <tr>
-        <td align="center" style="background-color:#ff167d; padding:15px;">
-            <span style="font-size:20px; font-weight:bold; color:#FFF;">
-                {{ encabezado | default("Hemos recibido tu solicitud") }}
-            </span>
-        </td>
-    </tr>
 
-    <!-- CONTENIDO -->
-    <tr>
-        <td style="padding:30px; color:#333; font-size:15px; line-height:1.6;">
 
-            <p>Hola <strong>{{ nombre_usuario }}</strong>,</p>
+                    <!-- CONTENIDO -->
+                    <tr>
 
-            <p>
-                Hemos recibido correctamente tu
-                <strong>{{ tipo_solicitud }}</strong> y fue radicada con el siguiente número:
-            </p>
 
-            <!-- RADICADO -->
-            <table align="center" cellpadding="0" cellspacing="0" style="margin:25px auto;">
-                <tr>
-                    <td style="background-color:#ff167d; padding:15px 30px;
-                               border-radius:18px; font-size:18px;
-                               font-weight:bold; color:#fff; text-align:center;">
-                        Radicado N° {{ numero_radicado }}
-                    </td>
-                </tr>
-            </table>
 
-            <!-- DETALLE -->
-            <table width="100%" cellpadding="0" cellspacing="0"
-                   style="background-color:#f9f9f9; border-radius:10px; margin:20px 0;">
-                <tr>
-                    <td style="padding:15px; font-size:14px;">
-                        <strong>Detalle registrado:</strong><br><br>
+                        <td style="padding:30px; color:#333; font-size:15px; line-height:1.6; text-align: center;">
 
-                        <strong>Fecha:</strong> {{ fecha_radicado }}<br>
-                        <strong>Canal:</strong> {{ canal }}<br>
-                        <strong>Ciudad:</strong> {{ ciudad }}<br><br>
+                            <!-- nueva barra -->
+                            <table width="100%" cellpadding="0" cellspacing="0"
+                                style="background-color:#F8F8F8; border-radius:10px; text-align: left; margin:20px 0;">
+                                <tr>
 
-                        <strong>Descripción:</strong><br>
-                        {{ descripcion }}
-                    </td>
-                </tr>
-            </table>
+                                    <td style="padding:15px; font-size:14px; text-align: center;">
+                                        <br><br>
+                                        <img src="{{ logo_url }}" alt="KRIKA" width="120"
+                                            style="display:block; margin: auto;">
+                                        <br>
+                                        <span
+                                            style="font-size:20px; font-weight:bold; color: #ff167d; text-align: center;">
+                                            {{ encabezado | default("Hemos recibido tu solicitud") }}
+                                        </span>
+                                        <br>
+                                        <p>Hola <strong>{{ nombre_usuario }}</strong>,</p>
 
-            <!-- TIEMPO RESPUESTA -->
-            <table width="100%" cellpadding="0" cellspacing="0"
-                   style="background-color:#e8f5e9; border-radius:10px; margin:20px 0;">
-                <tr>
-                    <td style="padding:15px; font-size:14px;">
-                        <strong>Tiempo estimado de respuesta:</strong><br>
-                        Dentro de los cinco (5) días hábiles siguientes.
-                    </td>
-                </tr>
-            </table>
+                                        <p>
+                                            Hemos recibido correctamente tu solicitud <br> y fue radicada con el
+                                            siguiente número:
+                                        </p>
 
-            <p>
-                Puedes consultar el estado de tu solicitud haciendo clic
-                <a href="{{ url_consulta }}"
-                   style="color:#ff167d; font-weight:bold; text-decoration:none;">
-                   aquí
-                </a>.
-            </p>
+                                        <table align="center" cellpadding="0" cellspacing="0" style="margin:25px auto;">
+                                            <tr>
+                                                <td style="background-color:#ff167d; padding: 8px 10px;
+                                                    border-radius:5rem; font-size:18px;
+                                                    font-weight:bold; color:#fff; text-align:center;">
+                                                    PQR: {{ numero_radicado }}
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br><br>
+                                    </td>
+                                </tr>
+                            </table>
 
-            <p>
-                Nuestro equipo está comprometido en brindarte la mejor experiencia.
-            </p>
+                            <!-- DETALLE -->
+                            <table width="100%" cellpadding="0" cellspacing="0"
+                                style="background-color:#F8F8F8; border-radius:10px; text-align: left; margin:20px 0;">
+                                <tr>
+                                    <td style="padding:15px; font-size:14px;">
+                                        <strong style="color: #ff167d;">Detalle registrado:</strong><br><br>
 
-            <p>
-                Cordialmente,<br>
-                <strong>Equipo de Servicio al Cliente</strong><br>
-                KRIKA COSMETICS
-            </p>
+                                        <strong>Fecha:</strong> {{ fecha_radicado }}<br>
+                                        <strong>Canal:</strong> {{ canal }}<br>
+                                        <strong>Ciudad:</strong> {{ ciudad }}<br><br>
 
-        </td>
-    </tr>
+                                        <strong>Descripción:</strong><br>
+                                        {{ descripcion }}
+                                    </td>
+                                </tr>
+                            </table>
 
-    <!-- FOOTER -->
-    <tr>
-        <td align="center" style="padding:20px; font-size:12px; color:#777;">
-            Este mensaje fue generado automáticamente.<br>
-            Por favor no respondas a este correo.
-            <br><br>
-            © {{ anio_actual }} KRIKA COSMETICS
-        </td>
-    </tr>
+                            <!-- TIEMPO RESPUESTA -->
+                            <table width="100%" cellpadding="0" cellspacing="0"
+                                style="background-color:#F8F8F8; border-radius:10px; text-align: left; margin:20px 0;">
+                                <tr>
+                                    <td style="padding:15px; font-size:14px;">
+                                        <strong style="color: #ff167d;">Tiempo estimado de respuesta:</strong><br>
+                                        Dentro de los cinco <b>(5) días hábiles</b> siguientes.
+                                    </td>
+                                </tr>
+                            </table>
 
-</table>
+                            <p style="text-align: left;">
+                                Puedes consultar el estado de tu solicitud haciendo clic
+                                <a href="{{ url_consulta }}"
+                                    style="color:#ff167d; font-weight:bold; text-decoration:none;">
+                                    aquí
+                                </a>.
+                            </p>
 
-</td>
-</tr>
-</table>
+                            <p style="text-align: left;">
+                                Nuestro equipo está comprometido en brindarte la mejor experiencia.
+                            </p>
+
+                            <p style="text-align: left;">Cordialmente,<br>
+                                <strong>Equipo de Servicio al Cliente</strong><br>
+                                KRIKA COSMETICS
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <!-- FOOTER -->
+                    <tr>
+                        <td align="center" style="padding:20px; font-size:12px; color:#777;">
+                            Este mensaje fue generado automáticamente.<br>
+                            Por favor no respondas a este correo.
+                            <br><br>
+                            © {{ anio_actual }} KRIKA COSMETICS
+                        </td>
+                    </tr>
+
+                </table>
+
+            </td>
+        </tr>
+    </table>
 
 </body>
+
 </html>
